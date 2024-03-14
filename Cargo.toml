@@ -1,0 +1,42 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+#ASYNC
+tokio = {version = "1.36.0",features = ["full"]}
+
+#http
+rocket = { version = "0.5.0",  features = ["json"]}
+#db
+diesel = { version = "2.1.0", features = ["postgres","chrono","uuid","serde_json"] }
+diesel_migrations = "2.1.0"
+diesel-async = { version = "0.4.1", features = ["postgres","bb8","async-connection-wrapper"] }
+diesel-derive-enum = { version = "2.1.0", features = ["postgres"] }
+bb8 = "0.8.3"
+bb8-diesel = "0.2.1"
+
+#JSON
+serde_json = "1.0.114"
+serde_derive = "1.0.197"
+serde = "1.0.197"
+
+
+#UT
+dotenvy = "0.15.7"
+async-trait = "0.1.77"
+chrono = {version = "0.4.35",features = ["serde"]}
+base64 = "0.22.0"
+rust-crypto = "0.2.36"
+
+
+#rapidoc
+rocket_okapi = {version = "0.8.0",features = ["rapidoc"]}
+okapi = "0.7.0"
+schemars = "0.8.16"
+
+
